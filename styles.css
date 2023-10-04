@@ -42,7 +42,7 @@ header {
 }
 
 .nav-links a:hover {
-    color: #ff6600;
+    color: #8418d6;
 }
 
 
@@ -59,7 +59,15 @@ h2 {
     color: #333;
 }
 
-
+.logo {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+}
+.logo-text {
+    display: inline-block;
+    vertical-align: middle;
+}
 
 
 footer {
