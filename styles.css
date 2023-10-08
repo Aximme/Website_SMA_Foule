@@ -1,51 +1,149 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
+    margin: 0;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 20px;
 }
 
 header {
-    background-color: #333;
+    background-color: #494949;
     color: #fff;
     padding: 10px 0;
+    text-align: center;
+}
+
+body {
+    font-family: 'Play', sans-serif;
+}
+
+.title { /*Code de la police trouvé sur : https://fonts.google.com/specimen/Oswald?preview.text=Tueurs%20dans%20la%20foule&preview.text_type=custom */
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.76);
+    position: relative;
+    animation: pulse 8s infinite;
+}
+@keyframes pulse { /*Animation générée a l'aide de ChatGPT*/
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
 }
 
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
 .logo {
-    font-size: 24px;
+    font-size: 30px;
+    max-width: 100%;
 }
 
 .nav-links {
     list-style-type: none;
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav-links li {
-    margin-right: 20px;
+    margin-right: 50px;
 }
 
-.nav-links a {
+/*Code du button trouvé sur : https://dev.to/webdeasy/top-20-css-buttons-animations-f41*/
+
+.btn {
+    text-transform: uppercase;
     text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    transition: color 0.3s;
+    padding: 15px 20px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
 }
 
-.nav-links a:hover {
-    color: #8418d6;
+.btn-white {
+    background-color: #ffffff;
+    color: #000000;
 }
 
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
 
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animate {
+    animation: moveInBottom 1s ease-out;
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
 
 section {
     background-color: #fff;
@@ -53,22 +151,67 @@ section {
     margin: 20px 0;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align: left;
 }
+
+/* Bouton en CSS ici : https://copy-paste-css.com */
+
+.btn_sec {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1;
+    border-radius: 500px;
+    transition-property: background-color, border-color, color, box-shadow, filter;
+    transition-duration: 0.7s;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 6px 6px 6px; /*16px 14px 18px*/
+    color: #616467;
+    box-shadow: inset 0 0 0 2px #616467;
+    background-color: transparent;
+    height: 48px;
+    text-decoration: none;
+    text-align: center;
+    display: flex; /* Utilisez flexbox pour centrer verticalement et horizontalement */
+    justify-content: center;
+    align-items: center;
+}
+
+.btn_sec:hover {
+    color: #fff;
+    background-color: #616467;
+}
+
+.section a.btn_sec {
+    display: inline-block;
+    position: absolute;
+    margin-right: 20%;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
 
 h2 {
     color: #333;
 }
 
 .logo {
-    width: 100px;
+    max-width: 200px;
     height: auto;
-    margin-right: 20px;
+    margin-right: 0px;
 }
-.logo-text {
-    display: inline-block;
-    vertical-align: middle;
-}
-
 
 footer {
     background-color: #333;
