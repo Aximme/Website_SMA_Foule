@@ -21,6 +21,49 @@
             </div>
         </nav>
     </header>
+
+<section id="integration">
+    <h2>🛜 Voici une visualisation de notre repository GitHub :</h2>
+    <iframe src="https://ghbtns.com/github-btn.html?user=Aximme&repo=Tueur_dans_la_foule&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+    <iframe src="https://ghbtns.com/github-btn.html?user=Aximme&repo=Tueur_dans_la_foule&type=watch&count=true&size=large&v=2" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+    <iframe src="https://ghbtns.com/github-btn.html?user=Aximme&repo=Tueur_dans_la_foule&type=follow&count=true&size=large" frameborder="0" scrolling="0" width="230" height="30" title="GitHub"></iframe>
+    <p> INTEGRER ICI LA VISUALISATION </p>
+</section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <div id="repository-data">
+        <!-- Les données du dépôt seront affichées ici -->
+    </div>
+
+    <script>
+        const token = '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';
+        const owner = 'Aximme';
+        const repo = 'Tueur_dans_la_foule';
+
+        // URL de l'API GitHub pour récupérer des informations sur le dépôt
+        const apiUrl = `https://api.github.com/repos/${owner}/${repo}`;
+
+        const headers = {
+            'Authorization': `token ${token}`
+        };
+
+        $.ajax({
+            url: apiUrl,
+            method: 'GET',
+            headers: headers,
+            success: function(data) {
+                $('#repository-data').html(`
+                    <h1>${data.name}</h1>
+                    <p>Description: ${data.description}</p>
+                    <p>URL du dépôt: <a href="${data.html_url}" target="_blank">${data.html_url}</a></p>
+                `);
+            },
+            error: function(error) {
+                console.error('Erreur lors de la récupération des données du dépôt :', error);
+            }
+        });
+    </script>
+
 <body>
 
 </body>

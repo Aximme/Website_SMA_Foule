@@ -212,6 +212,13 @@ h2 {
     height: auto;
     margin-right: 0px;
 }
+.gif-demo {
+    width: 600px;
+    height: 400px;
+    text-align: center;
+    margin: auto;
+    display: flex;
+}
 
 footer {
     background-color: #333;
