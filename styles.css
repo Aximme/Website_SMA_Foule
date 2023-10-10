@@ -220,25 +220,67 @@ h2 {
     display: flex;
 }
 
-.dropdown {
+.dropdown {/*CSS de l'animation généré par ChatGPT*/
     display: flex;
-    justify-content: center; /* Centrer horizontalement */
-    align-items: center; /* Centrer verticalement */
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
 }
 .arrow {
-    font-size: 24px; /* Taille de la flèche */
+    font-size: 24px;
 }
 .agent-section ul {
     display: none;
-    list-style-type: none; /* Supprime la puce de liste */
-    padding: 0; /* Supprime la marge intérieure de la liste */
+    list-style-type: none;
+    padding: 0;
 }
 .agent-section ul li {
-    margin-bottom: 10px; /* Espacement entre les éléments de la liste */
+    margin-bottom: 10px;
 }
 .agent-section ul li img {
-    margin-right: 1000px; /* Espacement entre l'image et le texte */
+    margin-right: 1000px;
+}
+
+.link-preview {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+}
+
+.link-preview img {
+    max-width: 200px;
+    height: auto;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.link-preview-text {
+    padding: 10px;
+    padding-left: 60px;
+}
+
+.link-preview h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.link-preview p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+.link-preview a {
+    font-size: 14px;
+    color: #007BFF;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
 }
 
 footer {
