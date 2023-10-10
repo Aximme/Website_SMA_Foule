@@ -220,6 +220,27 @@ h2 {
     display: flex;
 }
 
+.dropdown {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    cursor: pointer;
+}
+.arrow {
+    font-size: 24px; /* Taille de la flèche */
+}
+.agent-section ul {
+    display: none;
+    list-style-type: none; /* Supprime la puce de liste */
+    padding: 0; /* Supprime la marge intérieure de la liste */
+}
+.agent-section ul li {
+    margin-bottom: 10px; /* Espacement entre les éléments de la liste */
+}
+.agent-section ul li img {
+    margin-right: 1000px; /* Espacement entre l'image et le texte */
+}
+
 footer {
     background-color: #333;
     color: #fff;
