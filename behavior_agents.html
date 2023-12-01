@@ -29,10 +29,10 @@
         <span class="arrow">⬇️</span>
     </div>
     <ul class="liste">
-        <li><b>Comportement de Base :</b> Les bandits se déplacent de manière aléatoire dans l'environnement.</li><br>
-        <li><b>Agression des Civils :</b> Lorsqu'un bandit détecte un civil à proximité, il doit agresser le civil en se rapprochant de lui. L'agression peut varier en intensité, par exemple, en fonction de la distance entre le bandit et le civil.</li><br>
-        <li><b>Interaction avec les Policiers :</b> Les bandits peuvent être tués par les policiers s'ils sont à portée des policiers. Lorsqu'un bandit est tué, il doit disparaître de l'environnement.</li><br>
-        <li><b>Attributs :</b> Chaque bandit peut avoir des attributs tels que la position actuelle, la force, et une id unique.</li><br>
+        <li><b>Comportement de Base :</b> Les bandits se déplacent de manière aléatoire dans l'environnement. Mais sont attirés vers les civils pour les tuer quand ils les aperçoivent (pathfinding).</li><br>
+        <li><b>Agression des Civils :</b> Lorsqu'un bandit détecte un civil à proximité, il doit agresser le civil en se rapprochant de lui. Il peut l'agresser uniquement au contact des agents et non a distance !</li><br>
+        <li><b>Interaction avec les Policiers :</b> Les bandits peuvent être tués par les policiers s'ils sont à portée des policiers. Lorsqu'un bandit est tué, il doit disparait de l'environemment.</li><br>
+        <li><b>Attributs :</b> Chaque bandit a des attributs tels que la position actuelle, sa vitesse et s'il est assez proche d'un civil pour l'atteindre ou non.</li><br>
         <li><img src="src/Bandits_vs_Civils.gif" alt="demo_bandits" width="800" height="600"></li>
     </ul>
 </section>
@@ -44,25 +44,25 @@
         <span class="arrow">⬇️</span>
     </div>
     <ul class="liste">
-    <li><b>Comportement de Base :</b> Les policiers se déplacent de manière aléatoire dans l'environnement.</li><br>
-    <li><b>Intervention lors d'Agressions :</b> Lorsqu'un policier détecte une agression entre un bandit et un civil à proximité, il doit intervenir en se rapprochant de l'agression et en tuant le bandit pour protéger le civil. L'intervention peut être plus rapide si le policier est plus proche de l'agression.</li><br>
+    <li><b>Comportement de Base :</b> Les policiers se déplacent de manière aléatoire dans l'environnement. Mais sont attirés vers les bandits pour les neutraliser quand ils les aperçoivent (pathfinding).</li><br>
+    <li><b>Intervention lors d'Agressions :</b> Lorsqu'un policier détecte une agression entre un bandit et un civil à proximité, il est attiré et va neutraliser le ou les bandit(s) pour protéger le ou les civil(s).</li><br>
     <li><b>Communication :</b> Les policiers peuvent communiquer avec d'autres policiers pour coordonner leurs actions.</li><br>
-    <li><b>Attributs :</b> Chaque policier peut avoir des attributs tels que la position actuelle, la capacité de tir, et une id unique.</li><br>
+    <li><b>Attributs :</b> Chaque policier a comme attributs la position actuelle, sa vitesse et la condition d'etre assez proche d'un bandit pour le neutraliser.</li><br>
     <li><img src="src/Cop_vs_Bandits.gif" alt="demo_policiers" width="800" height="600"></li>
     </ul>
 </section>
 
 <section class="agent-section">
     <h2>👨‍💼Agent n°3 Les Civils</h2>
-    <p><b>Rôle :</b> Les civils représentent la population ordinaire de votre environnement. Leur principal rôle est de se déplacer de manière aléatoire dans l'environnement.<br>Clique sur la flèche pour en apprendre plus sur l'Agent "Policier".</p>
+    <p><b>Rôle :</b> Les civils représentent la population ordinaire de notre environnement. Leur principal rôle est de se déplacer de manière aléatoire.<br>Clique sur la flèche pour en apprendre plus sur l'Agent "Civil".</p>
     <div class="dropdown">
         <span class="arrow">⬇️</span>
     </div>
     <ul class="liste">
-    <li><b>Comportement de Base :</b> Les civils se déplacent de manière aléatoire, en choisissant une nouvelle position après un certain intervalle de temps.</li><br>
-    <li><b>Réaction au Danger :</b> Lorsqu'un civil détecte un danger ou une agression à proximité (par exemple, la présence d'un bandit à une certaine distance), il doit réagir en s'écartant du danger. Le degré de réaction peut varier en fonction de la proximité du danger.</li><br>
-    <li><b>Communication :</b> Les civils peuvent communiquer avec d'autres civils à proximité pour alerter sur la présence de bandits ou de policiers.</li><br>
-    <li><b>Attributs :</b> Chaque civil peut avoir des attributs tels que la position actuelle, son état (en vie ou non), et une id unique.</li><br>
+    <li><b>Comportement de Base :</b> Les civils se déplacent de manière aléatoire, en choisissant une nouvelle position après un certain intervalle de temps (threads).</li><br>
+    <li><b>Réaction au Danger :</b> Lorsqu'un civil détecte un danger ou une agression à proximité (par exemple, la présence d'un bandit à une certaine distance), il doit réagir en s'écartant du danger.</li><br>
+    <li><b>Communication :</b> Les civils peuvent communiquer avec d'autres civils à proximité pour alerter sur la présence de bandits et donc par conséquent s'échapper vers les issues de secours (3 actuellement sur notre simulation 2 en bas et 1 en haut).</li><br>
+    <li><b>Attributs :</b> Chaque civil a comme attributs la position actuelle, son état, et une cible, ou plustôt un point d'évacuation a rejoindre.</li><br>
     <li><img src="src/Civils.gif" alt="demo_civils" width="800" height="600"></li>
     </ul>
 </section>
